@@ -12,14 +12,16 @@ namespace Player
         private PlayerController _controller;
         private Transform _cameraPosition;
         private PickUpData _pickUpData;
+        private PickUpSystem _pickUpSystem;
 
         [Inject]
-        public void Construct(PlayerData data, PlayerController controller, PickUpData pickUpData)
+        public void Construct(PlayerData data, PlayerController controller, PickUpData pickUpData, PickUpSystem pickUpSystem)
         {
             _data = data;
             _controller = controller;
             _cameraPosition = _data.CameraPosition;
             _pickUpData = pickUpData;
+            _pickUpSystem = pickUpSystem;
             id = (int)Mathf.Log(mask.value, 2);
             _input = true;
         }
@@ -46,19 +48,12 @@ namespace Player
                 {
                     if (Input.GetKey(KeyCode.E) && _pickUpData.InventoryTransform.childCount == 0)
                     {
-                        hitInfo.transform.parent = _pickUpData.InventoryTransform;
-                        hitInfo.transform.localPosition = Vector3.zero;
-                        hitInfo.transform.rotation = Quaternion.identity;
-                        hitInfo.transform.GetComponent<Rigidbody>().isKinematic = true;
+                        _pickUpSystem.PickUp(hitInfo.transform, _pickUpData.InventoryTransform);
                     }
                 }
 
                 if (Input.GetKey(KeyCode.Q) && _pickUpData.InventoryTransform.childCount >= 1)
-                {
-                    Transform pickdeUpItem = _pickUpData.InventoryTransform.GetChild(0);
-                    pickdeUpItem.parent = null;
-                    pickdeUpItem.GetComponent<Rigidbody>().isKinematic = false;
-                }
+                    _pickUpSystem.Drop(_pickUpData.InventoryTransform.GetChild(0));
             }
         }
 

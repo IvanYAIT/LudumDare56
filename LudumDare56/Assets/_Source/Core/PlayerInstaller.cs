@@ -12,5 +12,6 @@ public class PlayerInstaller : MonoInstaller
         Container.Bind<PlayerData>().FromInstance(playerData).AsSingle().NonLazy();
         Container.Bind<PickUpData>().FromInstance(pickUpData).AsSingle().NonLazy();
         Container.Bind<PlayerController>().AsSingle().NonLazy();
+        Container.Bind<PickUpSystem>().AsSingle().NonLazy();
     }
 }
