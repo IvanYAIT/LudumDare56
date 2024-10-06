@@ -9,13 +9,16 @@ namespace BasketBallPuzzle
         private BallController _ballController;
         private LayerMask _shootZoneLayer;
         private Transform _cameraPosition;
+        private GameObject _tutor;
 
         [Inject]
-        public void Construct(BallData ballData, BallController ballController, LayerMask shootZoneLayer, CameraPositionData cameraPositionData)
+        public void Construct(BallData ballData, BallController ballController, LayerMask shootZoneLayer, CameraPositionData cameraPositionData, TutorialData tutorialData)
         {
             _ballData = ballData;
             _ballController = ballController;
             _shootZoneLayer = shootZoneLayer;
+            _tutor = tutorialData.BasketBAllPuzzleTutor;
+            tutorialData.BaskteBallPuzzleTutorBtn.onClick.AddListener(CompleteTutor);
             _cameraPosition = cameraPositionData.BasketBallPuzzleCamera;
         }
 
@@ -36,17 +39,28 @@ namespace BasketBallPuzzle
             }
         }
 
-        public override void TurnInput()
+        public void CompleteTutor()
         {
-            base.TurnInput();
+            _input = true;
+            _tutor.SetActive(false);
             if (_input)
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
                 Camera.main.transform.parent = _cameraPosition;
                 Camera.main.transform.localPosition = Vector3.zero;
-                Camera.main.transform.rotation = Quaternion.identity;
+                Camera.main.transform.rotation = _cameraPosition.rotation;
             }
+        }
+
+        public override void TurnInput()
+        {
+            if (!_input)
+            {
+                _tutor.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            base.TurnInput();
+            _input = false;
         }
     }
 }
