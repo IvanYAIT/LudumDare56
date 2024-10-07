@@ -6,10 +6,10 @@ namespace BowPuzzle
     {
         private float _shootForce = 0;
 
-        public void Rotate(Transform arrowTransform, RaycastHit hitInfo)
+        public void Rotate(Transform bowTransform, RaycastHit hitInfo)
         {
-            Vector3 dir = hitInfo.point - arrowTransform.position;
-            arrowTransform.rotation = Quaternion.LookRotation(dir);
+            Vector3 dir = hitInfo.point - bowTransform.position;
+            bowTransform.rotation = Quaternion.LookRotation(dir);
         }
 
         public void Charge(float maxForce, float force)

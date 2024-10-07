@@ -24,7 +24,7 @@ namespace MusicBoxPuzzle
             bgSlider.value = Random.Range(bgSlider.minValue, bgSlider.maxValue + 1);
         }
 
-        public void Check(Slider slider, Slider bgSlider, Transform cap, GameObject toy, Transform inventory)
+        public bool Check(Slider slider, Slider bgSlider, Transform cap, GameObject toy)
         {
             if(slider.value >= bgSlider.value - 2 && slider.value <= bgSlider.value + 2)
             {
@@ -39,7 +39,9 @@ namespace MusicBoxPuzzle
                 slider.gameObject.SetActive(false);
                 bgSlider.gameObject.SetActive(false);
                 toy.SetActive(true);
+                return true;
             }
+            return false;
         }
 
         public void Open(Transform cap)

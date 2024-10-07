@@ -31,15 +31,17 @@ namespace BowPuzzle
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, _shootZoneLayer))
                 {
-                    if(_bowData.ArrowRb.isKinematic)
-                        _bowController.Rotate(_bowData.ArrowTransform, hitInfo);
+                    if (_bowData.ArrowRb.isKinematic)
+                    {
+                        _bowController.Rotate(_bowData.BowTransform, hitInfo);
+                    }
                 }
 
                 if (Input.GetMouseButton(0))
                     _bowController.Charge(_bowData.MaxShootForece, _bowData.ForcePerPress);
 
                 if (Input.GetMouseButtonUp(0))
-                    _bowController.Shoot(_bowData.ArrowRb, _bowData.ArrowTransform.forward);
+                    _bowController.Shoot(_bowData.ArrowRb, _bowData.ArrowTransform.up);
             }
         }
 
@@ -62,6 +64,10 @@ namespace BowPuzzle
                 _tutor.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+            }
+            else
+            {
+                _tutor.SetActive(false);
             }
             base.TurnInput();
             _input = false;

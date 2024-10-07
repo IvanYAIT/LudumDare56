@@ -5,6 +5,8 @@ public class Toy : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
+    [SerializeField] private Transform pos;
+    [SerializeField] private bool check;
 
     public Rigidbody Rb => rb;
 
@@ -14,6 +16,12 @@ public class Toy : MonoBehaviour
         collision.gameObject.TryGetComponent<Ball>(out ball);
         if (ball != null)
             rb.isKinematic = false;
+    }
+
+    public void Move()
+    {
+        transform.position = pos.position;
+        animator.SetTrigger("Save");
     }
 
     public void SaveAnim()

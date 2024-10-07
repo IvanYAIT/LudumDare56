@@ -60,6 +60,10 @@ namespace BasketBallPuzzle
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
+            else
+            {
+                _tutor.SetActive(false);
+            }
             base.TurnInput();
             _input = false;
         }

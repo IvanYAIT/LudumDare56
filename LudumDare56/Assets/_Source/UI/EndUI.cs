@@ -9,6 +9,8 @@ public class EndUI : MonoBehaviour
     private void Awake()
     {
         mainMenuBtn.onClick.AddListener(End);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnDestroy()
