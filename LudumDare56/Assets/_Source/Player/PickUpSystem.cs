@@ -10,6 +10,12 @@ namespace Player
             itemForPick.localPosition = Vector3.zero;
             itemForPick.rotation = Quaternion.identity;
             itemForPick.GetComponent<Rigidbody>().isKinematic = true;
+            Toy toy;
+            itemForPick.TryGetComponent<Toy>(out toy);
+            if(toy != null)
+            {
+                toy.SaveAnim();
+            }
         }
 
         public void Drop(Transform pickedUpItem)

@@ -1,4 +1,6 @@
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Player
@@ -13,15 +15,20 @@ namespace Player
         private Transform _cameraPosition;
         private PickUpData _pickUpData;
         private PickUpSystem _pickUpSystem;
+        private Vector3 _startPos;
+        private Image _blackScreen;
+        private PauseMenu _pauseMenu;
 
         [Inject]
-        public void Construct(PlayerData data, PlayerController controller, PickUpData pickUpData, PickUpSystem pickUpSystem)
+        public void Construct(PlayerData data, PlayerController controller, PickUpData pickUpData, PickUpSystem pickUpSystem, PauseMenu pauseMenu)
         {
             _data = data;
             _controller = controller;
             _cameraPosition = _data.CameraPosition;
             _pickUpData = pickUpData;
             _pickUpSystem = pickUpSystem;
+            _pauseMenu = pauseMenu;
+            _blackScreen = data.BlackScreen;
             id = (int)Mathf.Log(mask.value, 2);
             _input = true;
         }
@@ -30,10 +37,14 @@ namespace Player
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            _startPos = transform.position;
         }
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+                _pauseMenu.Pause(_input);
+
             if (_input)
             {
                 Vector3 moveDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -77,6 +88,21 @@ namespace Player
                 Camera.main.transform.rotation = Quaternion.identity;
             }
             transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeInHierarchy);
+        }
+
+        public void ResetPosition()
+        {
+            _blackScreen.gameObject.SetActive(true);
+            _input = false;
+            _blackScreen.DOFade(1, 3).OnComplete(() =>
+            {
+                transform.position = _startPos;
+                _blackScreen.DOFade(0, 2).OnComplete(() =>
+                {
+                    _input = true;
+                    _blackScreen.gameObject.SetActive(false);
+                });
+            });
         }
     }
 }

@@ -22,7 +22,7 @@ namespace MusicBoxPuzzle
                 other.TryGetComponent(out handle);
                 if (handle != null)
                 {
-                    other.transform.parent = handlePlace;
+                    other.transform.parent = handlePlace.GetChild(0);
                     other.transform.position = handlePlace.position;
                     other.transform.rotation = handlePlace.rotation;
                 }

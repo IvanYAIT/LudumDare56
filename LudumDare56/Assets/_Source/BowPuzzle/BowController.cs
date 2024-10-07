@@ -12,10 +12,10 @@ namespace BowPuzzle
             arrowTransform.rotation = Quaternion.LookRotation(dir);
         }
 
-        public void Charge()
+        public void Charge(float maxForce, float force)
         {
-            if(_shootForce <= 30)
-                _shootForce += 0.1f;
+            if(_shootForce <= maxForce)
+                _shootForce += force;
         }
 
         public void Shoot(Rigidbody rb, Vector3 dir)

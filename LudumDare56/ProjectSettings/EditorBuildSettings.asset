@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/_Presentation/Scenes/MainMenu.unity
     guid: 869e6af227bbb78489f090916a10260f
   - enabled: 1
-    path: Assets/_Presentation/Scenes/Prototype(Ivan).unity
-    guid: c3e662a97f3795f45b654c794b220e81
+    path: Assets/_Presentation/Scenes/Gameplay.unity
+    guid: f7b2df8502abe96479d8b21ff855acfc
   m_configObjects: {}

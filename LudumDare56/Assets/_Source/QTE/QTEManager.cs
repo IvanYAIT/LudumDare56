@@ -10,8 +10,9 @@ namespace QTE
         [SerializeField] private QTEView view;
         [SerializeField] private int timeToPressAllKey;
         [SerializeField] private LayerMask playerLayerMask;
+        [SerializeField] private AudioSource audio;
+        [SerializeField] private int row = 5;
 
-        private int _row = 5;
         private KeyCode[] _currentKeyRow;
         private int _currentKey;
         private bool _start;
@@ -22,7 +23,7 @@ namespace QTE
 
         void Start()
         {
-            _currentKeyRow = new KeyCode[_row];
+            _currentKeyRow = new KeyCode[row];
             _currentKey = 0;
             _timer = timeToPressAllKey;
             _playerLayer = (int)Mathf.Log(playerLayerMask.value, 2);
@@ -38,8 +39,8 @@ namespace QTE
             {
                 if(_timer <= 0)
                 {
-                    Debug.Log("fail");
                     ResetQTE();
+                    _playerInputListener.ResetPosition();
                 }
                 else
                 {
@@ -66,12 +67,13 @@ namespace QTE
             view.TimerTextObject.SetActive(true);
             view.SetKey(_currentKeyRow[_currentKey].ToString());
             _playerInputListener.TurnInput();
+            audio.Play();
             StartCoroutine(QTEPreapare());
         }
 
         private void GenerateKeyRow()
         {
-            for (int i = 0; i < _row; i++)
+            for (int i = 0; i < row; i++)
             {
                 _currentKeyRow[i] = keys[Random.Range(0, keys.Length)];
             }
@@ -84,7 +86,6 @@ namespace QTE
                 _currentKey++;
                 if(_currentKey >= _currentKeyRow.Length)
                 {
-                    Debug.Log("win");
                     ResetQTE();
                     return;
                 }
@@ -94,13 +95,14 @@ namespace QTE
                 return;
             }else if(!Input.GetKeyDown(_currentKeyRow[_currentKey]) && Input.anyKeyDown)
             {
-                Debug.Log("fail wrong key");
                 ResetQTE();
+                _playerInputListener.ResetPosition();
             }
         }
 
         public void ResetQTE()
         {
+            gameObject.SetActive(false);
             _playerInputListener.TurnInput();
             _start = false;
             _currentKey = 0;

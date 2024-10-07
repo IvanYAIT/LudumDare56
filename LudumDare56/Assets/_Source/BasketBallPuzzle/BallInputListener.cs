@@ -29,7 +29,8 @@ namespace BasketBallPuzzle
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, _shootZoneLayer))
                 {
-                    _ballController.Rotate(_ballData.BallTransform, hitInfo);
+                    if(_ballData.BallRb.isKinematic)
+                        _ballController.Rotate(_ballData.BallTransform, hitInfo);
                 }
 
                 if (Input.GetMouseButtonDown(0))

@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+using BasketBallPuzzle;
 using UnityEngine;
 
 public class Toy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private Animator animator;
+
+    public Rigidbody Rb => rb;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        Ball ball;
+        collision.gameObject.TryGetComponent<Ball>(out ball);
+        if (ball != null)
+            rb.isKinematic = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SaveAnim()
     {
-        
+        animator.SetTrigger("Save");
     }
 }
