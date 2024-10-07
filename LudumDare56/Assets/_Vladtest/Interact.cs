@@ -7,6 +7,7 @@ public class Interact : MonoBehaviour
     [SerializeField] private Transform viewCamera;
     public LayerMask[] LayerToRayCast = new LayerMask[5];
     [SerializeField] private float interactionDistance = 5f;
+    public AudioSource audioSource;
 
     public RaycastHit? DoRayCasting()
     {
@@ -27,14 +28,17 @@ public class Interact : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             RaycastHit Hit = (RaycastHit)DoRayCasting();
-			OpenButton openButton = Hit.transform.GetComponent<OpenButton>();
+            OpenButton openButton;
+            Hit.transform.TryGetComponent<OpenButton>(out openButton);
+            Debug.Log(openButton);
             Key key = Hit.transform.GetComponent<Key>();
 			if(key!=null)
 			{
 				key.OnButtonB();
+                audioSource.Play();
 			}
 			if(openButton!=null)
 			{

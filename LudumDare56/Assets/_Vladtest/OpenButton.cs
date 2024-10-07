@@ -5,6 +5,8 @@ using UnityEngine;
 public class OpenButton : MonoBehaviour
 {
     private Lock locker;
+    
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -22,6 +24,7 @@ public class OpenButton : MonoBehaviour
         else if (!locker.IsPasswordCorrect())
         {
             locker.SetDefault();
+            audioSource.Play();
         }
     }
 }

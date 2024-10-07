@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class Lock : MonoBehaviour
 {
 	private int N1, N2, N3, N4, PN1, PN2, PN3, PN4;
 	private int CurentNumber = 1;
 	public TextMeshProUGUI TN1, TN2, TN3, TN4;
+	public TextMeshProUGUI TNP1, TNP2, TNP3, TNP4;
+	public Animator polka;
 	
+	
+	public AudioSource audioSource;
+	public AudioSource audioSource2;
     void Start()
     {
 	    SetDefault();
@@ -20,6 +26,10 @@ public class Lock : MonoBehaviour
 		N2 = Random.Range(0 ,9);
 		N3 = Random.Range(0, 9);
 		N4 = Random.Range(0, 9);
+		TNP1.text = N1.ToString();
+		TNP2.text = N2.ToString();
+		TNP3.text = N3.ToString();
+		TNP4.text = N4.ToString();
 		Debug.Log(N1.ToString() + "  " + N2.ToString() + "  " + N3.ToString() + "  " + N4.ToString());
     }
 
@@ -78,6 +88,8 @@ public class Lock : MonoBehaviour
     {
 	    //когда открою замочек
 	    Debug.Log("Ультра харошь");
+	    audioSource.Play();
+	    polka.SetBool("IsOpen", true);
     }
 
     public bool IsPasswordCorrect()

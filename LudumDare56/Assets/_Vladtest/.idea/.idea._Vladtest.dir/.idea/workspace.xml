@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e73cae42-c20c-434d-a884-3fc8d74fa565" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/Desktop/ActiveDrone.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Desktop/PlayeTOP.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Interact.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Key.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MovePolka.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/OpenButton.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TriggerSound.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2n3YK7JlcZTEG8lzAxY0HahE2nJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Vlad&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Влад\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Влад\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Влад\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e73cae42-c20c-434d-a884-3fc8d74fa565" name="Changes" comment="" />
+      <created>1728203160401</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728203160401</updated>
+      <workItem from="1728203162086" duration="11000" />
+      <workItem from="1728203450882" duration="22000" />
+      <workItem from="1728203661878" duration="23000" />
+      <workItem from="1728203730150" duration="17000" />
+      <workItem from="1728203776037" duration="5000" />
+      <workItem from="1728203963843" duration="22000" />
+      <workItem from="1728203996850" duration="5000" />
+      <workItem from="1728204012324" duration="4000" />
+      <workItem from="1728204026342" duration="64000" />
+      <workItem from="1728204111196" duration="36000" />
+      <workItem from="1728204156630" duration="8000" />
+      <workItem from="1728204198947" duration="18000" />
+      <workItem from="1728204297947" duration="8000" />
+      <workItem from="1728204312111" duration="2000" />
+      <workItem from="1728204414096" duration="208000" />
+      <workItem from="1728204645739" duration="7000" />
+      <workItem from="1728204959786" duration="34000" />
+      <workItem from="1728205002595" duration="21000" />
+      <workItem from="1728205034172" duration="6000" />
+      <workItem from="1728205054458" duration="171000" />
+      <workItem from="1728205238344" duration="39000" />
+      <workItem from="1728205297710" duration="103000" />
+      <workItem from="1728205584850" duration="31000" />
+      <workItem from="1728205636776" duration="6000" />
+      <workItem from="1728206454213" duration="20000" />
+      <workItem from="1728206527388" duration="4000" />
+      <workItem from="1728206552445" duration="10000" />
+      <workItem from="1728206647233" duration="19000" />
+      <workItem from="1728206678473" duration="1254000" />
+      <workItem from="1728208292444" duration="16000" />
+      <workItem from="1728208332658" duration="21000" />
+      <workItem from="1728208370394" duration="12000" />
+      <workItem from="1728208392868" duration="29000" />
+      <workItem from="1728209625517" duration="5000" />
+      <workItem from="1728209856249" duration="314000" />
+      <workItem from="1728210251538" duration="9000" />
+      <workItem from="1728210376152" duration="12000" />
+      <workItem from="1728210396208" duration="244000" />
+      <workItem from="1728210650578" duration="405000" />
+      <workItem from="1728211154167" duration="232000" />
+      <workItem from="1728211437247" duration="48000" />
+      <workItem from="1728211514165" duration="9000" />
+      <workItem from="1728211723390" duration="193000" />
+      <workItem from="1728211929369" duration="47000" />
+      <workItem from="1728212634275" duration="73000" />
+      <workItem from="1728212732212" duration="237000" />
+      <workItem from="1728213150772" duration="1000" />
+      <workItem from="1728213159797" duration="358000" />
+      <workItem from="1728213560565" duration="689000" />
+      <workItem from="1728214263721" duration="56000" />
+      <workItem from="1728214329394" duration="11000" />
+      <workItem from="1728214357618" duration="1996000" />
+      <workItem from="1728226297685" duration="14000" />
+      <workItem from="1728226389506" duration="11000" />
+      <workItem from="1728226489688" duration="291000" />
+      <workItem from="1728226796309" duration="8000" />
+      <workItem from="1728226814675" duration="98000" />
+      <workItem from="1728226923799" duration="36000" />
+      <workItem from="1728226970880" duration="7000" />
+      <workItem from="1728227000811" duration="128000" />
+      <workItem from="1728227173601" duration="130000" />
+      <workItem from="1728227315643" duration="4000" />
+      <workItem from="1728227342764" duration="13688000" />
+      <workItem from="1728299581477" duration="15774000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
