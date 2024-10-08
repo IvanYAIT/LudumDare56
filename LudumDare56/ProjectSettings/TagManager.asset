@@ -8,16 +8,16 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ThrowZone
+  - Basket
+  - BasketBallEnter
+  - Item
+  - Key
+  - arrow
+  - bow
   - 
   - 
   - 
